@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%- nickname %> Node Status</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <h1><%- nickname %> Node Status</h1>
+  <br>
+  <fieldset>
+    <legend>ABOUT THIS NODE</legend>
+    <div class="text">
+    <p>Version: <%- version %> (<%-protversion%>) <code></code></p>
+    <p>Subversion: <%- subversion %><code></code></p>
+    <p>Services: <code></code></p>
+    <p>Relay Fee: <code></code></p>
+    <p>Uptime: <code></code></p>
+  </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>BLOCKCHAIN INFO</legend>
+    <div class="text">
+    <p>Chain: <code></code></p>
+    <p>Blocks: <code></code></p>
+    <p>Headers: <code></code></p>
+    <p>Difficulty: <code></code></p>
+    <p>Median Time: <code></code></p>
+    <p>Size on disk: <code></code></p>
+    <p>Prunned: <code></code></p>
+    </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>TX MEMORY POOL INFO</legend>
+    <div class="text">
+    <p>Transactions: <code></code></p>
+    <p>Size: <code></code></p>
+    </div>
+  </fieldset>
+  <br>
+  <fieldset>
+    <legend>NETWORK USAGE</legend>
+    <div class="text">
+    <p>Total Received:<code></code></p>
+    <p>Total Sent: <code></code></p>
+    </div>
+
+
+</body>
+</html>
