@@ -33,3 +33,12 @@ legend {
 .text {
     line-height: 4px
 }
+
+.error,.p,.legend {
+    background-color: red;
+    text-align: center;
+    color: white;
+}
+#unhappy {
+    font-size: 60px
+}   

@@ -40,11 +40,12 @@ app.get("/", function(req, res) {
   let promises = [
     client.getNetworkInfo(val => (v.network = val)),
     client.getPeerInfo(val => (v.peers = val)),
-    client.getNetTotals(val => v.nettotals = val),
-    client.getBlockchainInformation(val => v.blockchain = val)
+    client.getNetTotals(val => (v.nettotals = val)),
+    client.getBlockchainInformation(val => (v.blockchain = val))
   ];
 
   Promise.all(promises)
+    .then()
     .then(data => {
       res.render("../views/index", {
         nickname: nickname,
@@ -53,9 +54,11 @@ app.get("/", function(req, res) {
         protversion: v.network.protocolversion
       });
     })
-    .catch(err => res.render("../views/error", {
-      error: err.cause
-    }));
+    .catch(err =>
+      res.render("../views/error", {
+        error: err.cause
+      })
+    );
 });
 
 app.listen(3000, function(res, req) {

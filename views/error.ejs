@@ -3,27 +3,15 @@
   <meta charset="UTF-8">
   <title>Error!</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <style>
-  body {
-      background-color: red;
-  }
-  h1,p,legend {
-      text-align: center;
-      color: white;
-  }
-  #unhappy {
-      font-size: 60px
-  }   
-  </style>
 </head>
-<body>
-  <h1>Error!</h1>
+<body class="error">
+  <h1 class="error">Error!</h1>
   <br>
-  <p id="unhappy">😭</p>
+  <p class="error" id="unhappy">😭</p>
   <fieldset>
-    <legend>Error details</legend>
+    <legend class="error">Details</legend>
     <div class="text">
-    <p><%- error %><code></code></p>
+    <p class="error"><%- error %><code></code></p>
     
   </div>
   </fieldset>
