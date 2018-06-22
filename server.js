@@ -48,12 +48,14 @@ app.get("/", function(req, res) {
     .then(data => {
       res.render("../views/index", {
         nickname: nickname,
-        version: v[0].version,
-        subversion: v[0].subversion,
-        protversion: v[0].protocolversion
+        version: v.network.version,
+        subversion: v.network.subversion,
+        protversion: v.network.protocolversion
       });
     })
-    .catch(err => console.log(err));
+    .catch(err => res.render("../views/error", {
+      error: err.cause
+    }));
 });
 
 app.listen(3000, function(res, req) {

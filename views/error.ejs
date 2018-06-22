@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error!</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <style>
+  body {
+      background-color: red;
+  }
+  h1,p,legend {
+      text-align: center;
+      color: white;
+  }
+  #unhappy {
+      font-size: 60px
+  }   
+  </style>
+</head>
+<body>
+  <h1>Error!</h1>
+  <br>
+  <p id="unhappy">😭</p>
+  <fieldset>
+    <legend>Error details</legend>
+    <div class="text">
+    <p><%- error %><code></code></p>
+    
+  </div>
+  </fieldset>
+
+</body>
+</html>
