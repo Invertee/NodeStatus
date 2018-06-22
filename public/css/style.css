@@ -20,6 +20,14 @@ fieldset {
     border-image: initial;
 }
 
+p {
+    font-weight: bold;
+}
+
+code {
+    font-weight: normal;
+}
+
 legend {
     display: block;
     -webkit-padding-start: 2px;

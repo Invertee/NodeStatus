@@ -1,51 +1,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><%- nickname %> Node Status</title>
+  <title><%= nickname %> Node Status</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-  <h1><%- nickname %> Node Status</h1>
+  <h1><%= nickname %> Node Status</h1>
   <br>
   <fieldset>
     <legend>ABOUT THIS NODE</legend>
     <div class="text">
-    <p>Version: <%- version %> (<%-protversion%>) <code></code></p>
-    <p>Subversion: <%- subversion %><code></code></p>
+    <p>Version: <code><%= version %> (<%=protversion%>)</code></p>
+    <p>Subversion: <code><%= subversion %></code></p>
     <p>Services: <code></code></p>
-    <p>Relay Fee: <code></code></p>
-    <p>Uptime: <code></code></p>
+    <p>Relay Fee: <code><%=relayfee%></code></p>
+    <p>Uptime: <code><%= uptime %></code></p>
   </div>
   </fieldset>
   <br>
   <fieldset>
     <legend>BLOCKCHAIN INFO</legend>
     <div class="text">
-    <p>Chain: <code></code></p>
-    <p>Blocks: <code></code></p>
-    <p>Headers: <code></code></p>
-    <p>Difficulty: <code></code></p>
-    <p>Median Time: <code></code></p>
+    <p>Chain: <code><%=chain%></code></p>
+    <p>Blocks: <code><%=blocks%></code></p>
+    <p>Headers: <code><%=headers%></code></p>
+    <p>Difficulty: <code><%=difficulty%></code></p>
+    <p>Median Time: <code><%=mediantime%></code></p>
+    <p>bestblockhash: <code><%=bestblockhash%></code></p>
     <p>Size on disk: <code></code></p>
-    <p>Prunned: <code></code></p>
+    <p>Prunned: <code><%=pruned%></code></p>
+    <p>Segwit: <code><%=segwit%></code></p>
     </div>
   </fieldset>
   <br>
   <fieldset>
     <legend>TX MEMORY POOL INFO</legend>
     <div class="text">
-    <p>Transactions: <code></code></p>
-    <p>Size: <code></code></p>
+    <p>Transactions: <code><%=transactions%></code></p>
+    <p>Size: <code><%=mempoolbytes%></code></p>
+    <p>Max Mempool Size: <code><%=maxmempool%></code></p>
     </div>
   </fieldset>
   <br>
   <fieldset>
     <legend>NETWORK USAGE</legend>
     <div class="text">
-    <p>Total Received:<code></code></p>
-    <p>Total Sent: <code></code></p>
+    <p>Total Received: <code><%= totalbytesrecv %></code></p>
+    <p>Total Sent: <code><%= totalbytessent %></code></p>
     </div>
+  </fieldset>
 
+  <br>
+  <fieldset>
+    <legend>CONNECTED PEERS (<%=peerscount%>)</legend>
+    <div class="text">
+    </div>
+  </fieldset>
 
 </body>
 </html>
