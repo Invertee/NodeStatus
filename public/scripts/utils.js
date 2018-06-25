@@ -71,9 +71,19 @@ function formatHex(hex) {
   return "0x" + hex.replace(/^0+/, "");
 }
 
+function replaceServices(itemclass) {
+  let items = document.getElementsByClassName(itemclass);
+  for (let i = 0; i < items.length; i++) {
+    let com = decodeServices(items[i].innerHTML);
+    if (!com) {com = '0x0'}
+    items[i].innerHTML = com;
+  }
+}
+
 function onLoad() {
   replaceBytes("bytes");
   replaceDates("connectiontime");
   replaceDates("banneduntil");
   replaceDates("bannedcreation");
+  replaceServices("peerservices")
 }

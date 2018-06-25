@@ -67,7 +67,7 @@
             <% for (var i = 0; i < peers.length; i++) { %>
                 <tr>
                     <td><%= peers[i].addr %> </td>
-                    <td><%= peers[i].services %> </td>
+                    <td class="peerservices"><%= peers[i].services %> </td>
                     <td class="connectiontime"><%= peers[i].conntime %> </td>
                     <td><%= peers[i].version %> </td>
                     <td><%= peers[i].subver %> </td>
