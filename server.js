@@ -46,6 +46,7 @@ app.get("/", function(req, res) {
   var nickname = config.nodenickname;
   let v = [];
   let promises = [
+    client.listBanned().then(val => v.banned = val).then(val => Promise.resolve(val)),
     client.getNetworkInfo().then(val => v.network = val).then(val => Promise.resolve(val)),
     client.getPeerInfo().then(val => v.peers = val).then(val => Promise.resolve(val)),
     client.getNetTotals().then(val => v.nettotals = val).then(val => Promise.resolve(val)),
@@ -55,7 +56,6 @@ app.get("/", function(req, res) {
   ];
 
   Promise.all(promises)
-    .then(data => console.log(v.peers))
     .then(data => {
       res.render("../views/index", {
         nickname: nickname,
@@ -77,7 +77,8 @@ app.get("/", function(req, res) {
         maxmempool: formatBytes(v.mempool.maxmempool),
         totalbytesrecv: formatBytes(v.nettotals.totalbytesrecv),
         totalbytessent: formatBytes(v.nettotals.totalbytessent),
-        peerscount: v.peers.length
+        peers: v.peers,
+        banned: v.banned
       });
     })
     .catch(err =>
