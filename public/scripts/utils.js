@@ -67,10 +67,6 @@ function decodeServices(flags) {
   return res.slice(0, -2);
 }
 
-function formatHex(hex) {
-  return "0x" + hex.replace(/^0+/, "");
-}
-
 function replaceServices(itemclass) {
   let items = document.getElementsByClassName(itemclass);
   for (let i = 0; i < items.length; i++) {
@@ -79,6 +75,11 @@ function replaceServices(itemclass) {
     items[i].innerHTML = com;
   }
 }
+
+function formatHex(hex) {
+  return "0x" + hex.replace(/^0+/, "");
+}
+
 
 function onLoad() {
   replaceBytes("bytes");
