@@ -1,0 +1,50 @@
+function formatBytes(bytes) {
+  var sizes = ["Bytes", "KB", "MB", "GB", "TB"];
+  if (bytes == 0) return "n/a";
+  var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+  if (i == 0) return bytes + " " + sizes[i];
+  return (bytes / Math.pow(1024, i)).toFixed(1) + " " + sizes[i];
+}
+
+function convertEpoch(seconds) {
+  var timestamp = seconds;
+  var date = new Date(timestamp * 1000);
+
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+
+  return (
+    year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds
+  );
+}
+
+function replaceBytes(itemclass) {
+  let items = document.getElementsByClassName(itemclass);
+  for (let i = 0; i < items.length; i++) {
+    let split = items[i].innerHTML.split(" / ");
+    let sent = formatBytes(split[0]);
+    let recv = formatBytes(split[1]);
+    let com = sent + " / " + recv;
+    items[i].innerHTML = com;
+  }
+}
+
+function replaceDates(itemclass) {
+  let items = document.getElementsByClassName(itemclass);
+  for (let i = 0; i < items.length; i++) {
+    let split = items[i].innerHTML.split(" / ");
+    let com = convertEpoch(items[i].innerHTML);
+    items[i].innerHTML = com;
+  }
+}
+
+function onLoad() {
+  replaceBytes("bytes");
+  replaceDates("connectiontime");
+  replaceDates("banneduntil");
+  replaceDates("bannedcreation");
+}
