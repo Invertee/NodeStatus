@@ -57,9 +57,9 @@ app.get("/", function(req, res) {
         version: v.network.version,
         subversion: v.network.subversion,
         localservices:
-          lib.decodeServices(v.network.services) +
+          lib.decodeServices(v.network.localservices) +
           " (" +
-          lib.formatHex(v.network.services) +
+          lib.formatHex(v.network.localservices) +
           ")",
         protversion: v.network.protocolversion,
         relayfee: v.network.relayfee,

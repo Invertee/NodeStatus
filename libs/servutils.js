@@ -31,7 +31,8 @@ formatBytes: function formatBytes(bytes) {
   },
   
   decodeServices: function decodeServices(flags) {
-    let flag = toDec(flags);
+    let flag = parseInt("0x" + flags, 16)
+    //let flag = lib.toDec(flags);
     let res = "";
     let services = [
       ["NONE", 0],
