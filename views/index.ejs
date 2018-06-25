@@ -3,8 +3,9 @@
   <meta charset="UTF-8">
   <title><%= nickname %> Node Status</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script src="/scripts/utils.js"></script>
 </head>
-<body>
+<body onload="onLoad()">
   <h1><%= nickname %> Node Status</h1>
   <br>
   <fieldset>
@@ -27,7 +28,6 @@
     <p>Difficulty: <code><%=difficulty%></code></p>
     <p>Median Time: <code><%=mediantime%></code></p>
     <p>bestblockhash: <code><%=bestblockhash%></code></p>
-    <p>Size on disk: <code></code></p>
     <p>Prunned: <code><%=pruned%></code></p>
     <p>Segwit: <code><%=segwit%></code></p>
     </div>
@@ -52,8 +52,55 @@
 
   <br>
   <fieldset>
-    <legend>CONNECTED PEERS (<%=peerscount%>)</legend>
-    <div class="text">
+    <legend>CONNECTED PEERS (<%= peers.length %>)</legend>
+    <div class="table">
+        <table>   
+            <tr>
+                <th>Address:</th>
+                <th>Services:</th>
+                <th>Connection Time:</th>
+                <th>Version:</th>
+                <th>Subversion:</th>
+                <th>Inbound:</th>
+                <th>Bytes Sent/Received:</th>
+            </tr>
+            <% for (var i = 0; i < peers.length; i++) { %>
+                <tr>
+                    <td><%= peers[i].addr %> </td>
+                    <td><%= peers[i].services %> </td>
+                    <td class="connectiontime"><%= peers[i].conntime %> </td>
+                    <td><%= peers[i].version %> </td>
+                    <td><%= peers[i].subver %> </td>
+                    <td><%= peers[i].inbound %> </td>
+                    <td class="bytes"><%= peers[i].bytessent %> / <%= peers[i].bytesrecv %> </td>
+                </tr>
+        
+            <% }; %>
+        </table>
+    </div>
+  </fieldset>
+
+  <br>
+  <fieldset>
+    <legend>BANNED PEERS (<%= banned.length %>)</legend>
+    <div class="table">
+        <table>   
+            <tr>
+                <th>Address:</th>
+                <th>Banned Until:</th>
+                <th>Ban Created:</th>
+                <th>Ban Reason:</th>
+            </tr>
+            <% for (var i = 0; i < banned.length; i++) { %>
+                <tr>
+                    <td><%= banned[i].address %> </td>
+                    <td class="banneduntil"><%= banned[i].banned_until %> </td>
+                    <td class="bannedcreation"><%= banned[i].ban_created %> </td>
+                    <td><%= banned[i].ban_reason %> </td>
+                </tr>
+        
+            <% }; %>
+        </table>
     </div>
   </fieldset>
 
