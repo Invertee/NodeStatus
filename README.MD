@@ -2,6 +2,8 @@
 
 A shameless ripoff of @xblau [node-interface](https://github.com/xblau/node-interface) in Javascript on Node.JS as a learning exercise. Uses Express and EJS to render the page. It should be reasonably secure but it has access to your full nodes RPC details so don't use it on nodes with your life savings on. 👍 
 
+Tested under NodeJS 8, earlier versions may not work. 
+
 ## Install
 
 Clone the repo, cd into the cloned folder and install the dependencies:
