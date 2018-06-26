@@ -1,4 +1,5 @@
 const lib = require("./libs/servutils.js");
+const perf = require("perf_hooks");
 const path = require("path");
 const config = require("./config.json");
 
@@ -17,6 +18,7 @@ const client = new Client({
 });
 
 app.get("/", function(req, res) {
+  let starttime = perf.performance.now()
   var nickname = config.nodenickname;
   let v = [];
   let promises = [
@@ -78,7 +80,8 @@ app.get("/", function(req, res) {
         totalbytesrecv: lib.formatBytes(v.nettotals.totalbytesrecv),
         totalbytessent: lib.formatBytes(v.nettotals.totalbytessent),
         peers: v.peers,
-        banned: v.banned
+        banned: v.banned,
+        time: (perf.performance.now() - starttime).toFixed()
       });
     })
     .catch(err =>
