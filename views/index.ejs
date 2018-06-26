@@ -24,10 +24,13 @@
     <div class="text">
     <p>Chain: <code><%=chain%></code></p>
     <p>Blocks: <code><%=blocks%></code></p>
+    <p>Best blockhash: <code><%=bestblockhash%></code></p>
     <p>Headers: <code><%=headers%></code></p>
     <p>Difficulty: <code><%=difficulty%></code></p>
     <p>Median Time: <code><%=mediantime%></code></p>
-    <p>bestblockhash: <code><%=bestblockhash%></code></p>
+    <% if (blockchainsize) { %>
+    <p>Blockchain Size: <code><%=blockchainsize%></code></p>
+    <% } %>
     <p>Prunned: <code><%=pruned%></code></p>
     <p>Segwit: <code><%=segwit%></code></p>
     </div>
