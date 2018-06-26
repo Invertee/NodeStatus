@@ -78,7 +78,6 @@ function replaceServices(itemclass) {
 
 function formatHex(hex) {
   return "0x" + hex.replace(/^0+/, "");
-}
 
 
 function onLoad() {
