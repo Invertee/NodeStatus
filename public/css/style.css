@@ -1,5 +1,5 @@
 body {
-    width: 900px;
+    width: 1100px;
     margin: 0 auto;
     font-family: 'Consolas';
     font-size: 14px;
@@ -77,5 +77,5 @@ th {
 
 footer {
     text-align: center;
-    font-size: 9px;
+    font-size: 10px;
 }
