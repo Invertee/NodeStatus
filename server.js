@@ -49,6 +49,10 @@ app.get("/", function(req, res) {
     client
       .getMempoolInfo()
       .then(val => (v.mempool = val))
+      .then(val => Promise.resolve(val)),
+    client
+      .getMiningInfo()
+      .then(val => (v.mining = val))
       .then(val => Promise.resolve(val))
   ];
 
@@ -58,6 +62,7 @@ app.get("/", function(req, res) {
         nickname: nickname,
         version: v.network.version,
         subversion: v.network.subversion,
+        mining: v.mining,
         localservices:
           lib.decodeServices(v.network.localservices) +
           " (" +
