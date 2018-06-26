@@ -1,6 +1,6 @@
 # Bitcoin/Litecoin Node Status Page
 
-A shameless rippoff of @xblau's [node-interface](https://github.com/xblau/node-interface) in Javascript on Node.JS as learning exercise. Uses Express and EJS to render the page. It should be reasonably secure but it has access to your full nodes RPC details so don't use it on nodes with your life savings on. 👍
+A shameless rippoff of @xblau's [node-interface](https://github.com/xblau/node-interface) in Javascript on Node.JS as learning exercise. Uses Express and EJS to render the page. It should be reasonably secure but it has access to your full nodes RPC details so don't use it on nodes with your life savings on. 👍 
 
 ## Install
 
@@ -22,7 +22,7 @@ Rename the config - example.json to config.json and edit with your nodes RPC set
     "username" : "RPCUSERNAME",
     "password" : "RPCPASSWORD",
     "webport" : "3000"
-}    
+    }    
 
 Start the the server and browse to the status page:
 
