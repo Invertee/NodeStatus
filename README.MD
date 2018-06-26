@@ -1,6 +1,6 @@
 # Bitcoin/Litecoin Node Status Page
 
-A shameless rippoff of @xblau's [node-interface](https://github.com/xblau/node-interface) in Javascript on Node.JS as learning exercise. Uses Express and EJS to render the page. It should be reasonably secure but it has access to your full nodes RPC details so don't use it on nodes with your life savings on. 👍 
+A shameless rippoff of @xblau [node-interface](https://github.com/xblau/node-interface) in Javascript on Node.JS as learning exercise. Uses Express and EJS to render the page. It should be reasonably secure but it has access to your full nodes RPC details so don't use it on nodes with your life savings on. 👍 
 
 ## Install
 
