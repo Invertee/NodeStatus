@@ -1,7 +1,9 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
 const lib = require("./libs/servutils.js");
 const perf = require("perf_hooks");
 const path = require("path");
-const config = require("./config.json");
 
 const http = require("http");
 const express = require("express");
@@ -11,15 +13,15 @@ app.use(express.static("public"));
 
 const Client = require("bitcoin-core");
 const client = new Client({
-  username: config.username,
-  password: config.password,
-  port: config.port,
-  host: config.host
+  username: process.env.RPC_Username,
+  password: process.env.RPC_Password,
+  port: process.env.RPC_port,
+  host: process.env.RPC_host
 });
 
 app.get("/", function(req, res) {
   let starttime = perf.performance.now()
-  var nickname = config.nodenickname;
+  var nickname = process.env.nodenickname;
   let v = [];
   let promises = [
     client
@@ -97,6 +99,6 @@ app.get("/", function(req, res) {
     );
 });
 
-app.listen(config.webport, function(res, req) {
-  console.log("Server running on port " + config.webport);
-});
+app.listen( process.env.webport, function(res, req) {
+  console.log( "Server running on port " + process.env.webport );
+} );

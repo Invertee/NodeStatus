@@ -15,20 +15,11 @@ Clone the repo, cd into the cloned folder and install the dependencies:
 
     C:\Users\Admin\Desktop\NodeStatus>npm install --no-optional
 
-Rename the config - example.json to config.json and edit with your nodes RPC settings:
-
-    {
-    "nodenickname" : "Satoshis",
-    "host" : "192.168.1.111",
-    "port" : "9332",
-    "username" : "RPCUSERNAME",
-    "password" : "RPCPASSWORD",
-    "webport" : "3000"
-    }    
+Rename the .env example to .env and edit with your nodes RPC settings
 
 Start the the server and browse to the status page:
 
-    C:\Users\Admin\Desktop\NodeStatus>node server.js
+    C:\Users\Admin\Desktop\NodeStatus>npm start
     Server running on port 3000
 
 

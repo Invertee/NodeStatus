@@ -1,0 +1,13 @@
+# Web Config
+webport=3000
+
+#Bitcoin Node Config
+nodenickname=Invertee
+RPC_host=10.10.0.225
+RPC_port=8181
+RPC_Username=admin
+RPC_Password=oi209asj0Q0mAsi290ajsd
+
+
+
+ 
